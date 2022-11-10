@@ -8,11 +8,11 @@ interface Props extends React.PropsWithChildren {
 
 const Users: React.FC<Props> = ({users}) => {
   return (
-    <div>
+    <div className="col row align-items-start">
       {users.map((user) => {
         return (
           <UserItem user={user} key={user.id}/>
-          )
+          );
       })}
     </div>
   );
