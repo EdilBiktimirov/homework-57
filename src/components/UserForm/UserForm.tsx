@@ -24,8 +24,7 @@ const UserForm: React.FC<Props> = ({onSubmit}) => {
 
     onSubmit({
       id: Math.random().toString(),
-      ...user,
-      active: user.active,
+      ...user
     });
 
     setUser(prev => ({
