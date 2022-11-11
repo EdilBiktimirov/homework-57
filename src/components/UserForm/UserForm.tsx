@@ -6,8 +6,7 @@ interface Props {
 }
 
 const UserForm: React.FC<Props> = ({onSubmit}) => {
-  const [user, setUser] = useState<UserMutation>(
-    {name: '', email: '', active: false, status: ''});
+  const [user, setUser] = useState<UserMutation>({name: '', email: '', active: false, status: ''});
 
   const onUserChange = (e: ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
     const {name, value} = e.target;
@@ -27,12 +26,7 @@ const UserForm: React.FC<Props> = ({onSubmit}) => {
       ...user
     });
 
-    setUser(prev => ({
-      ...prev,
-      name: '',
-      email: '',
-      status: '',
-    }));
+    setUser({name: '', email: '', active: false, status: ''});
   };
 
   return (
@@ -63,6 +57,7 @@ const UserForm: React.FC<Props> = ({onSubmit}) => {
           className="form-check-input ms-2 mb-2"
           id={"active"}
           name={"active"}
+          checked={user.active}
           type={"checkbox"}
           onChange={onCheckChange}
         />
